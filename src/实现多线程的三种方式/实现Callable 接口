@@ -1,0 +1,14 @@
+Runnable接口受限于run方法的类型签名，而Callable只有一个方法call()，可以有返回值，可以抛出受检异常。
+future模式：并发模式的一种，可以有两种形式，即无阻塞和阻塞，分别是isDone和get。其中Future对象用来存放该线程的返回值以及状态
+例如：
+
+    ExecutorService e = Executors.newFixedThreadPool(3);
+     //submit方法有多重参数版本，及支持callable也能够支持runnable接口类型.
+    Future future = e.submit(new myCallable());
+    future.isDone() //return true,false 无阻塞
+    future.get() // return 返回值，阻塞直到该线程运行结束
+    
+    
+    
+    
+    在Java.util.
